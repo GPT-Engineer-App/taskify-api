@@ -1,18 +1,11 @@
 # Task Management system
 
-**Description**: Build a RESTful api for a task management system using node.js, express.js framework, MongoDB and allow users to perform curd operations 
-
-## Who is the owner of this repository?
-By default, GPT Engineer projects are created with public GitHub repositories.
-
-However, you can easily transfer the repository to your own GitHub account by navigating to your [GPT Engineer project](https://run.gptengineer.app/projects/d1306cb2-ce04-44c2-897b-3db27718fda3/improve) and selecting Settings -> GitHub. 
+**Description**: Build a RESTful api for a task management system using node.js, express.js framework, MongoDB and allow users to perform curd operations  
 
 ## How can I edit this code?
 There are several ways of editing your application.
 
 **Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in the GPT Engineer UI.
 
 The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
