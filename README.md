@@ -1,10 +1,4 @@
-# Welcome to your GPT Engineer project
-
-## Project info
-
-**Project**: taskify-api 
-
-**URL**: https://run.gptengineer.app/projects/d1306cb2-ce04-44c2-897b-3db27718fda3/improve
+# Task Management system
 
 **Description**: Build a RESTful api for a task management system using node.js, express.js framework, MongoDB and allow users to perform curd operations 
 
@@ -15,12 +9,6 @@ However, you can easily transfer the repository to your own GitHub account by na
 
 ## How can I edit this code?
 There are several ways of editing your application.
-
-**Use GPT Engineer**
-
-Simply visit the GPT Engineer project at [GPT Engineer](https://run.gptengineer.app/projects/d1306cb2-ce04-44c2-897b-3db27718fda3/improve) and start prompting.
-
-Changes made via gptengineer.app will be committed automatically to this repo.
 
 **Use your preferred IDE**
 
@@ -61,12 +49,6 @@ This project is built with .
 - React
 - shadcn-ui
 - Tailwind CSS
-
-## How can I deploy this project?
-
-All GPT Engineer projects can be deployed directly via the GPT Engineer app. 
-
-Simply visit your project at [GPT Engineer](https://run.gptengineer.app/projects/d1306cb2-ce04-44c2-897b-3db27718fda3/improve) and click on Share -> Publish.
 
 ## I want to use a custom domain - is that possible?
 
