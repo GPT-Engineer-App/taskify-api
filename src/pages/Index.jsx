@@ -1,16 +1,20 @@
 import { useState } from 'react';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
-import axios from 'axios';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
 
-const API_URL = 'http://localhost:3000/api/tasks'; // Replace with your actual API URL
+// Mock API
+let mockTasks = [
+  { _id: '1', title: 'Learn React', completed: false },
+  { _id: '2', title: 'Build a project', completed: true },
+];
 
 const fetchTasks = async () => {
-  const { data } = await axios.get(API_URL);
-  return data;
+  return new Promise((resolve) => {
+    setTimeout(() => resolve(mockTasks), 500);
+  });
 };
 
 const Index = () => {
@@ -23,7 +27,11 @@ const Index = () => {
   });
 
   const createTaskMutation = useMutation({
-    mutationFn: (newTask) => axios.post(API_URL, { title: newTask, completed: false }),
+    mutationFn: (newTask) => {
+      const task = { _id: Date.now().toString(), title: newTask, completed: false };
+      mockTasks = [...mockTasks, task];
+      return Promise.resolve(task);
+    },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['tasks'] });
       setNewTask('');
@@ -31,14 +39,22 @@ const Index = () => {
   });
 
   const updateTaskMutation = useMutation({
-    mutationFn: (updatedTask) => axios.put(`${API_URL}/${updatedTask._id}`, updatedTask),
+    mutationFn: (updatedTask) => {
+      mockTasks = mockTasks.map(task => 
+        task._id === updatedTask._id ? updatedTask : task
+      );
+      return Promise.resolve(updatedTask);
+    },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['tasks'] });
     },
   });
 
   const deleteTaskMutation = useMutation({
-    mutationFn: (taskId) => axios.delete(`${API_URL}/${taskId}`),
+    mutationFn: (taskId) => {
+      mockTasks = mockTasks.filter(task => task._id !== taskId);
+      return Promise.resolve();
+    },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['tasks'] });
     },
